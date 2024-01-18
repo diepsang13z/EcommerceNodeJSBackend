@@ -10,6 +10,9 @@ app.use(helmet());
 app.use(compression());
 
 // init databases
+require('./databases/init.mongodb');
+const { checkOverload } = require('./helpers/check.connect');
+checkOverload();
 
 // init rounters
 
